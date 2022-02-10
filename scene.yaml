@@ -1,0 +1,8 @@
+!!python/tuple
+- __main__
+- Parallelogram
+- angle: 45
+  height: 10
+  width: 20
+  x: 0
+  y: 0
