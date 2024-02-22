@@ -23,17 +23,18 @@ async def resolve_future(future):
 async def wait_for_future(future):
     result = await future
     print('Future result: {}'.format(result))
+    await asyncio.sleep(1)
+    print('Done sleep: {}'.format(1))
 
 
 event_loop = asyncio.new_event_loop()
 
 fut = event_loop.create_future()
-# fut = asyncio.Future()
 
 event_loop.create_task(async_worker(3))
 event_loop.create_task(async_worker(4))
 
-event_loop.create_task(stop_event_loop(event_loop, 6))
+event_loop.create_task(stop_event_loop(event_loop, 2))
 
 event_loop.create_task(resolve_future(fut))
 

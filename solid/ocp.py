@@ -1,7 +1,21 @@
+# Open Close Principe
 import sys
 import time
 
 
+# Problem
+class Logger:
+
+    def log(self, message):
+        current_time = time.localtime()
+        sys.stderr.write(
+            f"{time.strftime('%Y-%b-%d %H:%M:%S -->', current_time)} --> {message}\n")
+
+
+# logger = Logger()
+# logger.log('An error has happened!')
+
+# Solution
 class Logger:
 
     def __init__(self):
@@ -19,8 +33,8 @@ logger.log('An error has happened!')
 
 class DateLogger(Logger):
     def __init__(self):
-       super().__init__()
-       self.format = '%Y-%b-%d -->'
+        super().__init__()
+        self.format = '%Y-%b-%d -->'
 
-logger2 = DateLogger()
-logger2.log('An error has happened!')
+logger_with_date = DateLogger()
+logger_with_date.log('An error has happened!')

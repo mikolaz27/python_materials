@@ -8,6 +8,34 @@
 #     return num + 5
 
 def func(day):
+    """
+    Function: func
+
+    Description:
+    This function takes a string parameter 'day' and returns a corresponding message based on the day.
+
+    Parameters:
+    - day (str): The day of the week.
+
+    Returns:
+    - str: Message based on the day.
+
+    Example:
+    >>> func("Monday")
+    'Here we go again...'
+
+    >>> func("Friday")
+    'Happy Friday!'
+
+    >>> func("Saturday")
+    'Yay, weekend!'
+
+    >>> func("Sunday")
+    'Yay, weekend!'
+
+    >>> func("Wednesday")
+    'Just another day...'
+    """
     match day:
         case "Monday":
             return "Here we go again..."

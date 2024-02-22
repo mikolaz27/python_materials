@@ -1,5 +1,30 @@
 # Single responsibility principe
 
+# Problem:
+class FileSaver:
+
+    def __init__(self, raw_data):
+        self.data = self.change_text_format(raw_data)
+
+    def save_file(self, filename):
+        with open(filename, 'w', encoding='UTF8') as f:
+            f.write(self.data)
+
+    def change_text_format(self):
+        result = ''
+        for item in self.data:
+            new_line = ','.join(
+                (
+                    item['name'],
+                    item['surname'],
+                    item['occupation']
+                )
+            )
+            result += f"{new_line}\n"
+        return result
+
+
+# Solution:
 class FileSaver:
 
     def __init__(self, filename):
@@ -40,7 +65,7 @@ data = [
         'occupation': 'doctor'
     }
 ]
-exporter = FileFormatter(data)
-file_saver = FileSaver('out.csv')
-
-file_saver.save_file(exporter.change_text_format())
+# exporter = FileFormatter(data)
+# file_saver = FileSaver('out.csv')
+#
+# file_saver.save_file(exporter.change_text_format())
