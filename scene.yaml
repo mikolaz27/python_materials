@@ -2,7 +2,7 @@
 - __main__
 - Parallelogram
 - angle: 45
-  height: 10
+  height: 100
   width: 20
-  x: 0
-  y: 0
+  x: 12
+  y: 12

@@ -1,5 +1,10 @@
 # Single responsibility principe
 
+# S O L I D
+# D R Y
+# K I S S
+# Y A G N I
+
 # Problem:
 class FileSaver:
 
@@ -10,7 +15,7 @@ class FileSaver:
         with open(filename, 'w', encoding='UTF8') as f:
             f.write(self.data)
 
-    def change_text_format(self):
+    def change_text_format(self, raw_data):
         result = ''
         for item in self.data:
             new_line = ','.join(
@@ -51,8 +56,8 @@ class FileFormatter:
             )
             result += f"{new_line}\n"
         return result
-
-
+#
+#
 data = [
     {
         'name': 'Sherlock',
@@ -65,7 +70,7 @@ data = [
         'occupation': 'doctor'
     }
 ]
-# exporter = FileFormatter(data)
-# file_saver = FileSaver('out.csv')
+exporter = FileFormatter(data)
+file_saver = FileSaver('out.csv')
 #
-# file_saver.save_file(exporter.change_text_format())
+file_saver.save_file(exporter.change_text_format())

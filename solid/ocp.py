@@ -1,4 +1,4 @@
-# Open Close Principe
+# Open/Close Principe
 import sys
 import time
 
@@ -15,6 +15,16 @@ class Logger:
 # logger = Logger()
 # logger.log('An error has happened!')
 
+
+
+
+
+
+
+
+
+
+
 # Solution
 class Logger:
 
@@ -24,7 +34,7 @@ class Logger:
     def log(self, message):
         current_time = time.localtime()
         sys.stderr.write(
-            f"{time.strftime(self.format, current_time)} --> {message}\n")
+            f"{time.strftime(self.format, current_time)} {message}\n")
 
 
 logger = Logger()
